@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Patient Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<header><h1>Patient Registration</h1></header>
+
+<main class="container">
+  <section class="card">
+    <h2>Register New Patient</h2>
+    <form id="patient-form">
+      <div class="grid">
+        <label>First Name*<input name="firstName" required></label>
+        <label>Last Name*<input name="lastName" required></label>
+        <label>DOB (YYYY-MM-DD)*<input name="dob" placeholder="1995-08-12" required></label>
+        <label>Gender*
+          <select name="gender" required>
+            <option value="">Select</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Phone*<input name="phone" required></label>
+        <label>Email<input name="email" type="email"></label>
+        <label>Address Line 1<input name="addressLine1"></label>
+        <label>Address Line 2<input name="addressLine2"></label>
+        <label>City<input name="city"></label>
+        <label>State<input name="state"></label>
+        <label>Postal Code<input name="postalCode"></label>
+        <label>Insurance Provider<input name="insuranceProvider"></label>
+        <label>Insurance Number<input name="insuranceNumber"></label>
+        <label>Emergency Contact Name<input name="emergencyContactName"></label>
+        <label>Emergency Contact Phone<input name="emergencyContactPhone"></label>
+      </div>
+      <div class="actions">
+        <button type="submit">Save</button>
+        <button type="reset" class="secondary">Clear</button>
+      </div>
+      <p id="form-msg" class="msg"></p>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>Patients</h2>
+    <div class="toolbar">
+      <input id="search" placeholder="Search by name/phone/email..." />
+      <button id="reload">Reload</button>
+    </div>
+    <table id="patients-table">
+      <thead>
+        <tr>
+          <th>ID</th><th>Name</th><th>DOB</th><th>Gender</th>
+          <th>Phone</th><th>Email</th><th>Created</th><th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <p id="list-msg" class="msg"></p>
+  </section>
+</main>
+
+<footer><small>© Patient Reg Demo</small></footer>
+<script src="./app.js"></script>
+</body>
+</html>
